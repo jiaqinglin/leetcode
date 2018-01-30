@@ -100,6 +100,90 @@
 //             nums1[idx_glo--]=nums2[idx2--];
 //         }
 //     }
-};           
+// };   
+
+//  746. Min Cost Climbing Stairs
+
+// class Solution {
+// public:
+//     int minCostClimbingStairs(vector<int>& cost) {
+//         int dp[cost.size()];
+//         dp[0]=cost[0];
+//         dp[1]=cost[1];
+//         for(int i=2;i<cost.size();i++){
+//             dp[i]=min(dp[i-1], dp[i-2])+cost[i];
+//         }
+//         return min(dp[cost.size()-2], dp[cost.size()-1]);
+//     }
+// private:
+//     int min(int a, int b){
+//         return a>b ? b:a;
+//     }
+// };
+
+
+// // 724. Find Pivot Index
+// class Solution {
+// public:
+//     int pivotIndex(vector<int>& nums) {
+//         if(nums.size()<=2){
+//             return -1;
+//         }
+//         int sum1[nums.size()];
+//         sum1[0] = nums[0];
+//         for(int i=1;i<nums.size();i++){
+//             sum1[i]=sum1[i-1]+nums[i];
+//         }
+//         int left_sum = 0;
+//         for(int i=0;i<nums.size();i++){
+//             if(sum1[i]==sum1[nums.size()-1]-left_sum){
+//                 return i;
+//             }
+//             else{
+//                 left_sum = sum1[i];
+//             }
+//             printf("%d ",left_sum);
+            
+//         }
+//         return -1;
+//     }
+// };
+
+// // 717. 1-bit and 2-bit Characters
+// class Solution {
+// public:
+//     bool isOneBitCharacter(vector<int>& bits) {
+//         int n = (int)bits.size();
+//         int i = 0;
+//         while (i<n-1) {
+//             if(bits[i]==0){
+//                 i++;
+//             }
+//             else{
+//                 i+=2;
+//             }
+//         }
+//         return i==n-1;
+//     }
+// };
+
+// // 26. Remove Duplicates from Sorted Array
+
+// class Solution {
+// public:
+//     int removeDuplicates(vector<int>& nums) {
+//         if(nums.size()==0){
+//             return 0;
+//         }
+//         int current_index=0;
+//         int dif_index = 1;
+//         for(;dif_index<nums.size();dif_index++){
+//             if(nums[dif_index]!=nums[current_index]){
+//                 nums[++current_index] = nums[dif_index];
+//             }
+//         }
+//         return current_index+1;
+//     }
+// };
 
 
